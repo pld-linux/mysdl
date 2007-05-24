@@ -15,6 +15,7 @@ BuildRequires:	SDL_image-devel
 BuildRequires:	expat-devel
 BuildRequires:	libvorbis-devel
 BuildRequires:	scons
+BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -22,6 +23,8 @@ MySDL is a gaming framework and library based on SDL, OpenGL, OpenAL
 and a few more open source libraries.
 
 %description -l pl.UTF-8
+MySDL to szkielet i biblioteka dla gier oparta na bibliotekach SDL,
+OpenGL, OpenAL i kilku innych o otwartych źródłach.
 
 %prep
 %setup -q -n %{name}_%{version}
@@ -46,5 +49,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%{_includedir}/*
 %{_libdir}/*.a
+%{_includedir}/*
