@@ -1,13 +1,12 @@
 Summary:	MySDL library
 Summary(pl.UTF-8):	Biblioteka MySDL
 Name:		mysdl
-Version:	1.0
+Version:	1.0.1
 Release:	1
 License:	GPL
 Group:		Libraries
 Source0:	http://source.musgit.com/files/%{name}_%{version}.tar.bz2
-# Source0-md5:	bc503a224c3012060a1da7d34886318c
-Patch0:		%{name}-build.patch
+# Source0-md5:	57338c671b01df9636cba1466f05be73
 URL:		http://source.musgit.com/
 BuildRequires:	OpenAL-devel
 BuildRequires:	OpenGL-GLU-devel
@@ -28,7 +27,6 @@ OpenGL, OpenAL i kilku innych o otwartych źródłach.
 
 %prep
 %setup -q -n %{name}_%{version}
-%patch0 -p1
 
 %build
 sed -i "s/CXXFLAGS=\['-march=pentium'\]/CXXFLAGS=Split(ARGUMENTS.get('CXXFLAGS',''))/" SConstruct
